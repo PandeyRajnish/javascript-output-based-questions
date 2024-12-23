@@ -1,4 +1,4 @@
-//! Functions in JavaScript
+//! ------------- Functions in JavaScript ------------------------
 // //? Q2 - What is function declarations or definitions or statement?
 // function square(num) {
 //   return num * num;
@@ -31,15 +31,25 @@
 //   })(2);
 // })(1);
 
-//? Q7 - Function Scope - O/P Based Question
-for (let i = 0; i < 5; i++) {
-  setTimeout(function () {
-    console.log(i); //* O/P - 0 1 2 3 4 (because of let & const are blocked scope)
-  }, i * 1000);
-}
+// //? Q7 - Function Scope - O/P Based Question
+// for (let i = 0; i < 5; i++) {
+//   setTimeout(function () {
+//     console.log(i); //* O/P - 0 1 2 3 4 (because of let & const are blocked scope)
+//   }, i * 1000);
+// }
 
 // for (var i = 0; i < 5; i++) {
 //   setTimeout(function () {
 //     console.log(i); //* O/P - 5 five times (var doesn't have blocked scope)
 //   }, i * 1000);
 // }
+
+//! -------------------- Hoisting --------------------
+functionName(); //* O/P - Functions are hoisted (hoisting works little differently in case of functions here complete function copied to scope)
+
+function functionName() {
+  console.log("Functions are hoisted");
+}
+console.log(x); //* O/P - undefined (because of hoisting)
+
+var x = 5;
