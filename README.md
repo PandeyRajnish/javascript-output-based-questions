@@ -78,3 +78,30 @@ Because of closure.
 </details>
 
 ---
+
+###### 3. What's the output?
+
+```javascript
+for (let i = 0; i < 5; i++) {
+  setTimeout(function () {
+    console.log(i);
+  }, i * 1000);
+}
+```
+
+- A: `0 1 2 3 4`
+- B: `5 5 5 5 5`
+- C: `Undefined Undefined Undefined Undefined Undefined`
+- D: `Error`
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: A
+
+The output is 0 1 2 3 4, as described in Option A, because let is block-scoped.
+
+</p>
+</details>
+
+---
