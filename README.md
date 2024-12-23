@@ -181,3 +181,33 @@ Therefore, when `console.log(x)` is executed, it outputs `undefined`.
 </details>
 
 ---
+
+###### 6. What's the output?
+
+```javascript
+var x = 21;
+
+var fun = function () {
+  console.log(x);
+  var x = 20;
+};
+
+fun();
+```
+
+- A: `21`
+- B: `20`
+- C: `undefined`
+- D: `ReferenceError: Cannot access 'x' before initialization`
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: C
+
+The `var x` inside the function is hoisted, creating a local `x` that shadows the global `x`. However, it is uninitialized at the time of `console.log(x)`, so it prints `undefined`. Initialization (`x = 20`) happens after the `console.log(x)` statement.
+
+</p>
+</details>
+
+---

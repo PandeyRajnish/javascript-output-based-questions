@@ -58,7 +58,7 @@
 var x = 21;
 
 var fun = function () {
-  console.log(x);
+  console.log(x); //* O/P - undefined
   var x = 20;
 };
 
