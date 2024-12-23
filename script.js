@@ -45,11 +45,21 @@
 // }
 
 //! -------------------- Hoisting --------------------
-functionName(); //* O/P - Functions are hoisted (hoisting works little differently in case of functions here complete function copied to scope)
+// functionName(); //* O/P - Functions are hoisted (hoisting works little differently in case of functions here complete function copied to scope)
 
-function functionName() {
-  console.log("Functions are hoisted");
-}
-console.log(x); //* O/P - undefined (because of hoisting)
+// function functionName() {
+//   console.log("Functions are hoisted");
+// }
+// console.log(x); //* O/P - undefined (because of hoisting)
 
-var x = 5;
+// var x = 5;
+
+//? Q9 - Function Hoisting - O/P Based Question
+var x = 21;
+
+var fun = function () {
+  console.log(x);
+  var x = 20;
+};
+
+fun();
