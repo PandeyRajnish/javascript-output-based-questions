@@ -1,4 +1,4 @@
-// Functions in JavaScript
+//! Functions in JavaScript
 // //? Q2 - What is function declarations or definitions or statement?
 // function square(num) {
 //   return num * num;
@@ -19,14 +19,27 @@
 
 // displaySquare(square);
 
-//? Q4- What is IIFE - Immediately Invoked Function Expression
-(function square(num) {
-  console.log(num * num); //* O/P - 5
-})(5);
+// //? Q4- What is IIFE - Immediately Invoked Function Expression
+// (function square(num) {
+//   console.log(num * num); //* O/P - 5
+// })(5);
 
-//? Q5 - IIFE - O/P Based Question?
-(function (x) {
-  return (function (y) {
-    console.log(x); //* O/P - 1 (because of closure)
-  })(2);
-})(1);
+// //? Q5 - IIFE - O/P Based Question?
+// (function (x) {
+//   return (function (y) {
+//     console.log(x); //* O/P - 1 (because of closure)
+//   })(2);
+// })(1);
+
+//? Q7 - Function Scope - O/P Based Question
+for (let i = 0; i < 5; i++) {
+  setTimeout(function () {
+    console.log(i); //* O/P - 0 1 2 3 4 (because of let & const are blocked scope)
+  }, i * 1000);
+}
+
+// for (var i = 0; i < 5; i++) {
+//   setTimeout(function () {
+//     console.log(i); //* O/P - 5 five times (var doesn't have blocked scope)
+//   }, i * 1000);
+// }
