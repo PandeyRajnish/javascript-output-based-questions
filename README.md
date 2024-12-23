@@ -143,3 +143,41 @@ By the time the first callback executes (after `0 * 1000` ms), the `for` loop ha
 </details>
 
 ---
+
+###### 5. What's the output?
+
+```javascript
+functionName();
+
+function functionName() {
+  console.log("Functions are hoisted");
+}
+console.log(x);
+
+var x = 5;
+```
+
+- A: `Functions are hoisted` `undefined`
+- B: `Functions are hoisted` `5`
+- C: `ReferenceError: Cannot access 'x' before initialization`
+- D: `TypeError: functionName is not a function`
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: A
+
+Function Hoisting:
+
+The function `functionName` is hoisted, meaning it is available throughout the entire scope.
+Calling `functionName()` before its declaration works fine, and the output is `Functions are hoisted`.
+
+Variable Hoisting:
+
+The variable `x` is declared using `var`, which is hoisted to the top of its scope but initialized with `undefined` until the line where it is assigned a value (`x = 5`).
+Therefore, when `console.log(x)` is executed, it outputs `undefined`.
+
+</p>
+</details>
+
+---
