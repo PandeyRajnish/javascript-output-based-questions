@@ -105,3 +105,41 @@ The output is 0 1 2 3 4, as described in Option A, because let is block-scoped.
 </details>
 
 ---
+
+###### 4. What's the output?
+
+```javascript
+for (var i = 0; i < 5; i++) {
+  setTimeout(function () {
+    console.log(i);
+  }, i * 1000);
+}
+```
+
+- A: `0 1 2 3 4`
+- B: `Error`
+- C: `Undefined Undefined Undefined Undefined Undefined`
+- D: `5 5 5 5 5`
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: D
+
+`var` is function-scoped:
+When using `var`, the variable `i` is not block-scoped but function-scoped. This means that all iterations of the for loop share the same `i` variable.
+
+How `setTimeout` works:
+The function inside `setTimeout` is a callback that executes after the specified delay. By the time these callbacks execute (after `i * 1000` milliseconds), the `for` loop has already completed its execution, and the value of `i` has become `5`.
+
+What happens in the loop:
+
+The loop runs 5 times, incrementing `i` from `0` to `4`.
+Each time, `setTimeout` schedules a callback to run after i \_ 1000 milliseconds.
+However, all these callbacks reference the same i variable.
+By the time the first callback executes (after `0 * 1000` ms), the `for` loop has completed, and `i` is now `5`.
+
+</p>
+</details>
+
+---
